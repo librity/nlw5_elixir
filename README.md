@@ -1,77 +1,151 @@
-# Next Level Week 4 - Inmana
+# Next Level Week 5 - Inmana
+
+## Table of Contents
+
+- [About](#about)
+- [Endpoints](#endpoints)
+- [Setup](#setup)
+- [Bash Commands](#bash_commands)
+- [Elixir Commands](#elixir_commands)
+- [Libs](#libs)
+- [Docs](#docs)
+- [Resources](#resources)
+
+## About <a name = "about"></a>
 
 An inventory management backend made with Elixir and Phoenix.
 
-## Endpoints
+## Endpoints <a name = "endpoints"></a>
 
 Built-in
 
 - `GET` http://localhost:4000/dashboard/home
 
-## Postgres
+## Setup <a name = "setup"></a>
 
-Create a new docker container with:
+1. Install `asdf`, an extensible version manager for node, clojure, elixir
+   and ruby:
+
+```bash
+# Install apt-get packages
+$ sudo apt install curl git
+
+# Clone asdf
+$ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.8.0
+
+# Add it to your path
+$ echo '# asdf version manager' >> ~/.bashrc
+$ echo '. $HOME/.asdf/asdf.sh' >> ~/.bashrc
+$ echo '. $HOME/.asdf/completions/asdf.bash' >> ~/.bashrc
+```
+
+- SOURCE: https://asdf-vm.com/#/core-manage-asdf
+
+2. Install `Erlang`, `Elixir` and `Phoenix`:
+
+```bash
+# Install apt-get packages
+$ sudo apt-get -y install build-essential autoconf m4 libncurses5-dev \
+  libwxgtk3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev \
+  unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk
+
+# Add plugins
+$ asdf plugin-add erlang
+$ asdf plugin-add elixir
+
+# Install and set Elixir
+$ asdf install elixir 1.11.3
+$ asdf global elixir 1.11.3
+
+# Install and set Erlang
+$ asdf install erlang 23.2
+$ asdf global erlang 23.2
+
+# Verify installation
+$ erl --version
+$ elixir --version
+
+# Install Phoenix
+$ mix archive.install hex phx_new 1.5.8
+```
+
+### Postgres
+
+Create a postgress docker container with:
 
 ```bash
 $ docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postgres
 ```
 
-## Bash Commands
+## Bash Commands <a name = "bash_commands"></a>
 
 ```bash
-# Install Phoenix
-$ mix archive.install hex phx_new 1.5.8
+# Create phoenix app without webpacker or html views
+$ mix phx.new app_name --no-webpack --no-html
 
-# Create a Phoenix API (like rails new)
-$ mix phx.new inmana --no-webpack --no-html
-
-# Setup Ecto (database wrapper and query generator) and check database connection (like rails db:setup)
-$ mix ecto.setup
-
-# Install dependencies (like bundle install)
+# Intall dependencies
 $ mix deps.get
 
-# Create config file for credo (linter, like rubocop)
-$ mix credo gen.config
+# Compile project
+$ mix compile
 
-# Run credo
-$ mix credo
+# Generate linter config file
+$ mix credo.gen.config
 
-# Start the server (like rails s)
+# Run linter
+$ mix credo --strict
+
+# Start Phoenix dev server on http://localhost:4000
 $ mix phx.server
 
-# Interactive Elixir console (like irb)
-$ iex
-
-# Phoenix app console (like rails c)
+# Start your project as an Interactive Elixir session
 $ iex -S mix
 
-# Runs tests (like bundle exec rspec)
-$ mix test
-
-# Create a migration
-$ mix ecto.gen.migration create_user_table
-
-# Migrate database
-$ mix ecto.migrate
-
-# Drop database
-$ mix ecto.drop
-
-# Create database
-$ mix ecto.create
-
-# Generate code coverage report
-$ mix test --cover
-
-# Generate an HTML code coverage report (just like the coveralls gem)
-$ mix coveralls.html
+# List all configured routes
+$ mix phx.routes
 ```
 
-## Elixir Commands
+### Ecto
 
-## Libs
+```bash
+# Create and migrate database
+$ mix ecto.setup
 
-## Docs
+# Create a migration
+$ mix ecto.gen.migration migration_name
 
-## Resources
+# Run pending migrations
+$ mix ecto.migrate
+
+# Drop and migrate databases
+$ mix ecto.reset
+
+# Drop databases
+$ mix ecto.drop
+
+# Create databases
+$ mix ecto.create
+```
+
+### Tests
+
+```bash
+# Run tests
+$ mix test
+
+# Run tests w/ coverage report
+$ mix test --cover
+```
+
+## Elixir Commands <a name = "elixir_commands"></a>
+
+## Libs <a name = "libs"></a>
+
+- https://github.com/phoenixframework/phoenix
+- https://github.com/rrrene/credo
+
+## Docs <a name = "docs"></a>
+
+- https://elixir-lang.org/crash-course.html
+
+## Resources <a name = "resources"></a>
