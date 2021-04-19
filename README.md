@@ -7,6 +7,7 @@
 - [Setup](#setup)
 - [Bash Commands](#bash_commands)
 - [Elixir Commands](#elixir_commands)
+- [Concepts](#concepts)
 - [Libs](#libs)
 - [Docs](#docs)
 - [Resources](#resources)
@@ -20,6 +21,10 @@ An inventory management backend made with Elixir and Phoenix.
 Built-in
 
 - `GET` http://localhost:4000/dashboard/home
+
+`WelcomeController`
+
+- `GET` http://localhost:4000/api?name=GDADdsad&age=65
 
 ## Setup <a name = "setup"></a>
 
@@ -152,6 +157,14 @@ $ mix credo --strict
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
+
+## Concepts <a name = "concepts"></a>
+
+### Concurrency vs. Parallelism
+
+<p>
+  <img src=".github/concurrency_vs_parallelism.svg"/>
+</p>
 
 ## Libs <a name = "libs"></a>
 
