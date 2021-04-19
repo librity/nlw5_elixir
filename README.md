@@ -79,30 +79,33 @@ $ docker run --name postgres -e POSTGRES_PASSWORD=postgres -p 5432:5432 -d postg
 
 ## Bash Commands <a name = "bash_commands"></a>
 
+### Phoenix
+
 ```bash
 # Create phoenix app without webpacker or html views
 $ mix phx.new app_name --no-webpack --no-html
 
-# Intall dependencies
+# Start Phoenix dev server on http://localhost:4000
+$ mix phx.server
+
+# List all configured routes
+$ mix phx.routes
+```
+
+### Mix
+
+```bash
+# Install all dependencies
 $ mix deps.get
 
 # Compile project
 $ mix compile
 
-# Generate linter config file
-$ mix credo.gen.config
-
-# Run linter
-$ mix credo --strict
-
-# Start Phoenix dev server on http://localhost:4000
-$ mix phx.server
-
 # Start your project as an Interactive Elixir session
 $ iex -S mix
 
-# List all configured routes
-$ mix phx.routes
+# Format all files
+$ mix format
 ```
 
 ### Ecto
@@ -135,6 +138,17 @@ $ mix test
 
 # Run tests w/ coverage report
 $ mix test --cover
+```
+
+### Credo
+
+```bash
+# Generate linter config file
+$ mix credo.gen.config
+
+# Run linter
+$ mix credo
+$ mix credo --strict
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
