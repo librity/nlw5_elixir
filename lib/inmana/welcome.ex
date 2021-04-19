@@ -1,4 +1,4 @@
-defmodule Inmana.Welcomer do
+defmodule Inmana.Welcome do
   def call(%{"name" => name, "age" => age}) do
     name
     |> clean_name()
