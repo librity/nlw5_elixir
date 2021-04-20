@@ -24,7 +24,11 @@ Built-in
 
 `WelcomeController`
 
-- `GET` http://localhost:4000/api?name=GDADdsad&age=65
+- `GET` http://localhost:4000/api?name=john&age=21
+
+`RestaurantsController`
+
+- `POST` http://localhost:4000/api/restaurants
 
 ## Setup <a name = "setup"></a>
 
@@ -157,6 +161,13 @@ $ mix credo --strict
 ```
 
 ## Elixir Commands <a name = "elixir_commands"></a>
+
+Create a restaurant:
+
+```elixir
+params = %{"name" => "Joe's coffee and dinner", "email" => "cup@joes.yum"}
+params |> Inmana.Restaurants.Create.call()
+```
 
 ## Concepts <a name = "concepts"></a>
 
