@@ -16,6 +16,12 @@ defmodule InmanaWeb.ErrorView do
     %{errors: %{detail: Phoenix.Controller.status_message_from_template(template)}}
   end
 
+  def render("error.json", %{result: message = changeset}) do
+    %{
+      message: message
+    }
+  end
+
   def render("error.json", %{result: %Changeset{} = changeset}) do
     %{
       message: translate_errors(changeset)
