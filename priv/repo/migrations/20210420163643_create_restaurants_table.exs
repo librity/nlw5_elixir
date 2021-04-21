@@ -9,6 +9,6 @@ defmodule Inmana.Repo.Migrations.CreateRestaurantsTable do
       timestamps()
     end
 
-    create unique_index(:restaurants, [:email])
+    create(unique_index(:restaurants, [:email]))
   end
 end

@@ -3,14 +3,19 @@ defmodule Inmana.Restaurant do
 
   import Ecto.Changeset
 
+  alias Inmana.Supply
+
   @primary_key {:id, :binary_id, autogenerate: true}
 
   @required_params [:name, :email]
-  @derive {Jason.Encoder, only: @required_params ++ [:id]}
+
+  @derive {Jason.Encoder, only: [:id | @required_params]}
 
   schema "restaurants" do
     field :name, :string
     field :email, :string
+
+    has_many :supplies, Supply
 
     timestamps()
   end

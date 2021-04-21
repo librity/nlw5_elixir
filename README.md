@@ -185,5 +185,9 @@ params |> Inmana.Restaurants.Create.call()
 ## Docs <a name = "docs"></a>
 
 - https://elixir-lang.org/crash-course.html
+- https://hexdocs.pm/ecto/Ecto.Changeset.html#traverse_errors/2
 
 ## Resources <a name = "resources"></a>
+
+- https://www.electronjs.org/apps/postbird
+- https://www.beekeeperstudio.io/get
