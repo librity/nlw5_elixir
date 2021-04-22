@@ -1,0 +1,7 @@
+{:ok, pid} = Inmana.Supplies.Scheduler.start()
+Inmana.Supplies.Scheduler.put(pid, :dsa, "DECEC")
+Inmana.Supplies.Scheduler.get(pid, :dsa)
+Inmana.Supplies.Scheduler.put(pid, :ft, 42)
+Inmana.Supplies.Scheduler.get(pid, :ft)
+Inmana.Supplies.Scheduler.put(pid, "ft", 42)
+Inmana.Supplies.Scheduler.get(pid, "ft")

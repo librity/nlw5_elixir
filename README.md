@@ -231,6 +231,7 @@ end)
 - https://elixir-lang.org/crash-course.html
 - https://hexdocs.pm/ecto/Ecto.Changeset.html#traverse_errors/2
 - https://hexdocs.pm/elixir/master/Task.html#async_stream/3
+- https://hexdocs.pm/elixir/master/GenServer.html
 
 ## Resources <a name = "resources"></a>
 
