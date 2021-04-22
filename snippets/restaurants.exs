@@ -9,5 +9,3 @@ bad_params |> Inmana.Restaurant.changeset() |> Inmana.Repo.insert()
 
 params = %{"name" => "Joe's sister location", "email" => "sis@joes.yum"}
 params |> Inmana.Restaurants.Create.call()
-
-Inmana.Supplies.Get.ByExpiration.call()

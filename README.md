@@ -119,6 +119,12 @@ $ iex -S mix phx.server
 
 # Format all files
 $ mix format
+
+# Run a mix alias defined in ./mix.exs
+$ mix example
+
+# Run a mix task defined in ./lib/mix/tasks/example_task.ex
+$ mix example_task
 ```
 
 ### Ecto
@@ -232,6 +238,8 @@ end)
 - https://hexdocs.pm/ecto/Ecto.Changeset.html#traverse_errors/2
 - https://hexdocs.pm/elixir/master/Task.html#async_stream/3
 - https://hexdocs.pm/elixir/master/GenServer.html
+- https://github.com/elixir-lang/elixir/releases
+- https://elixirschool.com/en/lessons/basics/mix-tasks
 
 ## Resources <a name = "resources"></a>
 
