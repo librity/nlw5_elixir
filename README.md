@@ -169,6 +169,32 @@ params = %{"name" => "Joe's coffee and dinner", "email" => "cup@joes.yum"}
 params |> Inmana.Restaurants.Create.call()
 ```
 
+Atoms vs Words
+
+```elixir
+:timer.tc(fn ->
+  :word == :word
+  :word != :word
+
+  :dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz ==
+    :dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz
+
+  :dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz !=
+    :dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz
+end)
+
+:timer.tc(fn ->
+  "word" == "word"
+  "word" != "word"
+
+  "dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz" ==
+    "dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz"
+
+  "dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz" !=
+    "dasdasdadasdsadasdasdasdasdqwedqsczxcaseei0i0eijqwjcxjicjz"
+end)
+```
+
 ## Concepts <a name = "concepts"></a>
 
 ### Concurrency vs. Parallelism
@@ -181,6 +207,7 @@ params |> Inmana.Restaurants.Create.call()
 
 - https://github.com/phoenixframework/phoenix
 - https://github.com/rrrene/credo
+- https://github.com/thoughtbot/bamboo
 
 ## Docs <a name = "docs"></a>
 

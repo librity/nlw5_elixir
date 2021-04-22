@@ -1,10 +1,6 @@
 defmodule Inmana.Supplies.Get do
-  alias Inmana.{Repo, Supply}
+  alias Inmana.Supplies.Get.{ByExpiration, ById}
 
-  def by_id(uuid) do
-    case Repo.get(Supply, uuid) do
-      nil -> {:error, %{result: "Supply not found", status: :not_found}}
-      %Supply{} = supply -> {:ok, supply}
-    end
-  end
+  defdelegate by_id(uuid), to: ById, as: :call
+  defdelegate by_expiration(date), to: ByExpiration, as: :call
 end
