@@ -179,6 +179,13 @@ Send expiration email:
 Inmana.Supplies.ExprationNotification.send()
 ```
 
+`Task` module:
+
+```elixir
+list = [%{a: 5, b: 2}, %{a: 12, b: 2}, %{a: 86, b: 2}]
+Task.async_stream(list, fn element -> IO.puts(element.a) end) |> Stream.run()
+```
+
 Atoms vs Words
 
 ```elixir
@@ -223,6 +230,7 @@ end)
 
 - https://elixir-lang.org/crash-course.html
 - https://hexdocs.pm/ecto/Ecto.Changeset.html#traverse_errors/2
+- https://hexdocs.pm/elixir/master/Task.html#async_stream/3
 
 ## Resources <a name = "resources"></a>
 

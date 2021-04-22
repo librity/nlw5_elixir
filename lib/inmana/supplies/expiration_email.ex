@@ -13,13 +13,13 @@ defmodule Inmana.Supplies.ExpirationEmail do
     )
   end
 
-  def generate_body(supplies) do
+  defp generate_body(supplies) do
     body = "--- Supplies that will expire this week ---\n"
 
     Enum.reduce(supplies, body, &add_supply/2)
   end
 
-  def add_supply(
+  defp add_supply(
         %Supply{
           description: description,
           responsible: responsible,
