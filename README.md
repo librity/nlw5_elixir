@@ -21,6 +21,7 @@ An inventory management backend made with Elixir and Phoenix.
 Built-in
 
 - `GET` http://localhost:4000/dashboard/home
+- `GET` http://localhost:4000/sent_emails
 
 `WelcomeController`
 
@@ -113,6 +114,9 @@ $ mix compile
 # Start your project as an Interactive Elixir session
 $ iex -S mix
 
+# Start your dev server with an Interactive Elixir session
+$ iex -S mix phx.server
+
 # Format all files
 $ mix format
 ```
@@ -167,6 +171,12 @@ Create a restaurant:
 ```elixir
 params = %{"name" => "Joe's coffee and dinner", "email" => "cup@joes.yum"}
 params |> Inmana.Restaurants.Create.call()
+```
+
+Send expiration email:
+
+```elixir
+Inmana.Supplies.ExprationNotification.send()
 ```
 
 Atoms vs Words

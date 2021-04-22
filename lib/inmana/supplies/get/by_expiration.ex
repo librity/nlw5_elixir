@@ -3,7 +3,7 @@ defmodule Inmana.Supplies.Get.ByExpiration do
 
   alias Inmana.{Repo, Restaurant, Supply}
 
-  def call(today \\ Date.utc_today()) do
+  def call(today) do
     beginning_of_week = Date.beginning_of_week(today)
     end_of_week = Date.end_of_week(today)
 
