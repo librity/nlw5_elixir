@@ -20,13 +20,13 @@ defmodule Inmana.Supplies.ExpirationEmail do
   end
 
   defp add_supply(
-        %Supply{
-          description: description,
-          responsible: responsible,
-          expiration_date: expiration_date
-        },
-        body
-      ) do
+         %Supply{
+           description: description,
+           responsible: responsible,
+           expiration_date: expiration_date
+         },
+         body
+       ) do
     body <>
       "Description: #{description}, Responsible: #{responsible}, Expires: #{expiration_date}\n"
   end

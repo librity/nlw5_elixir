@@ -35,6 +35,11 @@ Built-in
 
 - `POST` http://localhost:4000/api/restaurants
 
+`SuppliesController`
+
+- `GET` http://localhost:4000/api/supplies/:uuid
+- `POST` http://localhost:4000/api/supplies
+
 ## Setup <a name = "setup"></a>
 
 1. Install `asdf`, an extensible version manager for node, clojure, elixir
