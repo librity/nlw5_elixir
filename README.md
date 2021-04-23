@@ -1,5 +1,9 @@
 # Next Level Week 5 - Inmana
 
+<p align="center">
+  <img src=".github/inmana_logo.png"/>
+</p>
+
 ## Table of Contents
 
 - [About](#about)
@@ -100,6 +104,9 @@ $ mix phx.server
 
 # List all configured routes
 $ mix phx.routes
+
+# Automagically generate schema and migration
+$ mix phx.gen.schema Blog.Post blog_posts title:string views:integer
 ```
 
 ### Mix
@@ -240,6 +247,7 @@ end)
 - https://hexdocs.pm/elixir/master/GenServer.html
 - https://github.com/elixir-lang/elixir/releases
 - https://elixirschool.com/en/lessons/basics/mix-tasks
+- https://hexdocs.pm/phoenix/Mix.Tasks.Phx.Gen.Schema.html
 
 ## Resources <a name = "resources"></a>
 
