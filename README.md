@@ -243,6 +243,7 @@ end)
 - https://github.com/phoenixframework/phoenix
 - https://github.com/rrrene/credo
 - https://github.com/thoughtbot/bamboo
+- https://github.com/parroty/excoveralls
 
 ## Docs <a name = "docs"></a>
 
